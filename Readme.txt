@@ -1,3 +1,11 @@
+I have written a script that REs 3.5% of the Skyrim!
+The game has 113614 functions, which is a lot to analyze manually. I noticed that the game uses template types for different kinds of arrays and hash-maps. Each type generates its own (almost identical) functions. For example, `BSTArray<int>` has the same `begin` function as `BSTArray<PlayerCharacter*>`. My script can automatically find over 4k such functions, and it can also determine their addresses, types, and create the structures they use.
+
+This script can also help you with reverse-engineering new functions, as you can see the usage of functions related to arrays & maps. You can also see the types of local variables that are passed to the functions that my script identified. This can make your analysis more accurate and efficient.
+
+It is for SSE and for IDA 7.6. I am afraid that it doesn't work with older versions, but I beieve that there is someone here who can port it to previous versions. Fortunately few functions are used while you run it. 
+
+
 BACKUP DATABASE BEFORE USING!
 (I always use Ctrl+Z and all fine, but just in case)
 
